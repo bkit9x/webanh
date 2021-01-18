@@ -3,13 +3,13 @@ using System.Data.SqlClient;
 
 namespace NguyenHoangKha
 {
-    public partial class load : System.Web.UI.Page
+    public partial class admin : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                ltrLoadHinhAnh.Text = LoadHinhAnh();
+                ltrTable.Text = LoadHinhAnh();
             }
         }
         private string LoadHinhAnh()
@@ -17,7 +17,7 @@ namespace NguyenHoangKha
             string connectionString =
                 "Data Source=KIT;database=NguyenHoangKha;Initial Catalog=NguyenHoangKha;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
-            string queryString = "SELECT TOP 12 link FROM dbo.hinhanh ORDER BY NEWID();";
+            string queryString = "SELECT * FROM dbo.hinhanh;";
             using (SqlConnection connection =
                 new SqlConnection(connectionString))
             {
@@ -27,7 +27,8 @@ namespace NguyenHoangKha
                 string s = "";
                 while (reader.Read())
                 {
-                    s += @"<div class='col-lg-3 col-md-4 col-sm-6 col-xs-12 thumb'><a href='" + reader[0] + @"' class='fancybox' rel='ligthbox'><img src='" + reader[0] + @"' class='zoom img-fluid' alt='anh hot girl'></a></div>";
+                    s += "<tr><th>" + reader[0] + @"</th><th>" + reader[1] + @"</th><th><img src='" + reader[1] + @"' class='small_thumb' alt='images'/></th><th><a href='#' class='btn btn-success ml-2' onclick='modalEdit(" + reader[0] + ",\"" + reader[1] + "\")'>Sửa</a> <a href='#' class='btn btn-danger ml-2' onclick='modalDelete(" + reader[0] + @")'>Xóa</a></th></tr>
+";
                 }
                 reader.Close();
                 return s;

@@ -75,17 +75,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin.aspx" />
     <Content Include="Content\StyleSheet.css" />
     <Content Include="index.aspx" />
     <Content Include="load.aspx" />
+    <Content Include="Script\admin.js" />
     <Content Include="Script\fancybox.js" />
     <Content Include="Script\loadData.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Code\DBHinhAnh.cs" />
-    <Compile Include="App_Code\sql.cs" />
-    <Compile Include="App_Code\hinhanh.cs" />
+    <Compile Include="admin.aspx.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin.aspx.designer.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

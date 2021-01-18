@@ -1,5 +1,0 @@
-﻿CREATE TABLE hinhanh
-(
-	[id] INT NOT NULL PRIMARY KEY, 
-    [link] VARCHAR(256) NULL
-)

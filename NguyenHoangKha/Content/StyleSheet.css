@@ -1,26 +1,20 @@
 ﻿body {
     background-color: #1d1d1d !important;
     font-family: "Asap", sans-serif;
-    color: #989898;
-    margin: 10px;
     font-size: 16px;
+    color: #cdcdcd;
 }
-
-#demo {
-    height: 100%;
-    position: relative;
-    overflow: hidden;
+.navbar {
+    background: rgb(59,59,59);
+    background: linear-gradient(180deg, rgba(59,59,59,1) 0%, rgba(49,49,49,1) 50%, rgba(36,36,36,1) 100%);
 }
-
-
-.green {
-    background-color: #6fb936;
-}
-
 .thumb {
     margin-bottom: 60px;
 }
-
+.small_thumb{
+    height: 50px;
+    width: auto;
+}
 .page-top {
     margin-top: 85px;
 }
@@ -45,16 +39,8 @@ img.zoom {
     transform: scale(1.1);
 }
 
-.modal-header {
-    border-bottom: none;
-}
-
-.modal-title {
-    color: #000;
-}
-
-.modal-footer {
-    display: none;
+.text-light{
+    color: #ffffff!important;
 }
 
 .fancybox-margin {

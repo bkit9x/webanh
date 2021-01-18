@@ -1,0 +1,88 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="NguyenHoangKha/Content/StyleSheet.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+      function modalEdit(id, link) {
+        document.getElementById('EditLink').value = link;
+        document.getElementById('EditId').value = id;
+        var myModal = new bootstrap.Modal(document.getElementById('EditModal'));
+        myModal.show();
+      }
+
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark px-5 fixed-top">
+      <a class="navbar-brand" href="#">NguyenHoangKha</a>
+    </nav>
+    <div class="container page-top">
+    <table id="example" class="table table-dark table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Link</th>
+                    <th>Image</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><th>1</th><th>https://bkit9x.github.io/hinhanh/hinh%20(1).jpg</th><th><img src='https://bkit9x.github.io/hinhanh/hinh%20(1).jpg' class='small_thumb' alt='images'/></th><th><a href='#' class='btn btn-success ml-2' onclick='modalEdit(1,"a")'>Sửa</a> <a href='#' class='btn btn-danger ml-2' onclick='modalDelete(1)'>Xóa</a></th></tr>
+<tr><th>2</th><th>https://bkit9x.github.io/hinhanh/hinh%20(2).jpg</th><th><img src='https://bkit9x.github.io/hinhanh/hinh%20(2).jpg' class='small_thumb' alt='images'/></th><th><a href='#' class='btn btn-success ml-2' onclick='modalEdit(2,"a")'>Sửa</a> <a href='#' class='btn btn-danger ml-2' onclick='modalDelete(2)'>Xóa</a></th></tr>
+<tr><th>3</th><th>https://bkit9x.github.io/hinhanh/hinh%20(3).jpg</th><th><img src='https://bkit9x.github.io/hinhanh/hinh%20(3).jpg' class='small_thumb' alt='images'/></th><th><a href='#' class='btn btn-success ml-2' onclick='modalEdit(3,"a")'>Sửa</a> <a href='#' class='btn btn-danger ml-2' onclick='modalDelete(3)'>Xóa</a></th></tr>
+<tr><th>4</th><th>https://bkit9x.github.io/hinhanh/hinh%20(4).jpg</th><th><img src='https://bkit9x.github.io/hinhanh/hinh%20(4).jpg' class='small_thumb' alt='images'/></th><th><a href='#' class='btn btn-success ml-2' onclick='modalEdit(4,"a")'>Sửa</a> <a href='#' class='btn btn-danger ml-2' onclick='modalDelete(4)'>Xóa</a></th></tr>
+<tr><th>5</th><th>https://bkit9x.github.io/hinhanh/hinh%20(5).jpg</th><th><img src='https://bkit9x.github.io/hinhanh/hinh%20(5).jpg' class='small_thumb' alt='images'/></th><th><a href='#' class='btn btn-success ml-2' onclick='modalEdit(5,"a")'>Sửa</a> <a href='#' class='btn btn-danger ml-2' onclick='modalDelete(5)'>Xóa</a></th></tr>
+<tr><th>6</th><th>https://bkit9x.github.io/hinhanh/hinh%20(6).jpg</th><th><img src='https://bkit9x.github.io/hinhanh/hinh%20(6).jpg' class='small_thumb' alt='images'/></th><th><a href='#' class='btn btn-success ml-2' onclick='modalEdit(6,"a")'>Sửa</a> <a href='#' class='btn btn-danger ml-2' onclick='modalDelete(6)'>Xóa</a></th></tr>
+<tr><th>7</th><th>https://bkit9x.github.io/hinhanh/hinh%20(7).jpg</th><th><img src='https://bkit9x.github.io/hinhanh/hinh%20(7).jpg' class='small_thumb' alt='images'/></th><th><a href='#' class='btn btn-success ml-2' onclick='modalEdit(7,"a")'>Sửa</a> <a href='#' class='btn btn-danger ml-2' onclick='modalDelete(7)'>Xóa</a></th></tr>
+<tr><th>8</th><th>https://bkit9x.github.io/hinhanh/hinh%20(8).jpg</th><th><img src='https://bkit9x.github.io/hinhanh/hinh%20(8).jpg' class='small_thumb' alt='images'/></th><th><a href='#' class='btn btn-success ml-2' onclick='modalEdit(8,"a")'>Sửa</a> <a href='#' class='btn btn-danger ml-2' onclick='modalDelete(8)'>Xóa</a></th></tr>
+<tr><th>9</th><th>https://bkit9x.github.io/hinhanh/hinh%20(9).jpg</th><th><img src='https://bkit9x.github.io/hinhanh/hinh%20(9).jpg' class='small_thumb' alt='images'/></th><th><a href='#' class='btn btn-success ml-2' onclick='modalEdit(9,"a")'>Sửa</a> <a href='#' class='btn btn-danger ml-2' onclick='modalDelete(9)'>Xóa</a></th></tr>
+<tr><th>10</th><th>https://bkit9x.github.io/hinhanh/hinh%20(10).jpg</th><th><img src='https://bkit9x.github.io/hinhanh/hinh%20(10).jpg' class='small_thumb' alt='images'/></th><th><a href='#' class='btn btn-success ml-2' onclick='modalEdit(10,"a")'>Sửa</a> <a href='#' class='btn btn-danger ml-2' onclick='modalDelete(10)'>Xóa</a></th></tr>
+<tr><th>11</th><th>https://bkit9x.github.io/hinhanh/hinh%20(11).jpg</th><th><img src='https://bkit9x.github.io/hinhanh/hinh%20(11).jpg' class='small_thumb' alt='images'/></th><th><a href='#' class='btn btn-success ml-2' onclick='modalEdit(11,"a")'>Sửa</a> <a href='#' class='btn btn-danger ml-2' onclick='modalDelete(11)'>Xóa</a></th></tr>
+
+            </tbody>
+        </table>
+    </div>
+    <!-- Edit -->
+    <div class="modal fade" id="EditModal" tabindex="-1" aria-labelledby="EditModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="EditModalLabel">Chỉnh sửa</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form method="post" action="" name="edit">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Link</label>
+                <input type="url" class="form-control" id="EditLink" name="link" placeholder="Enter Link">
+              </div>
+                <input type="hidden" class="form-control" id="EditId" name="id">
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" name="button_edit" form="edit" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
+</body>
+</html>
