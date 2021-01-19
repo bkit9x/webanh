@@ -5,17 +5,58 @@ namespace NguyenHoangKha
 {
     public partial class admin : System.Web.UI.Page
     {
+        private string connectionString =
+    "Data Source=KIT;database=NguyenHoangKha;Initial Catalog=NguyenHoangKha;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+                if (Request.Form["button_Delete"] != null)
+                {
+                    string queryString = "DELETE FROM dbo.hinhanh WHERE id=@id;";
+                    using (SqlConnection connection =
+                        new SqlConnection(connectionString))
+                    {
+                        SqlCommand command = new SqlCommand(queryString, connection);
+                        command.Parameters.AddWithValue("@id", Request.Form["DeleteId"]);
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                    }
+
+                }
+                if (Request.Form["button_edit"] != null)
+                {
+                    string queryString = "UPDATE dbo.hinhanh SET link=@link WHERE id=@id;";
+                    using (SqlConnection connection =
+                        new SqlConnection(connectionString))
+                    {
+                        SqlCommand command = new SqlCommand(queryString, connection);
+                        command.Parameters.AddWithValue("@id", Request.Form["EditId"]);
+                        command.Parameters.AddWithValue("@link", Request.Form["EditLink"]);
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                    }
+                }
+                if (Request.Form["button_add"] != null)
+                {
+                    string queryString = "INSERT INTO dbo.hinhanh VALUES(@id,@link);";
+                    using (SqlConnection connection =
+                        new SqlConnection(connectionString))
+                    {
+                        SqlCommand command = new SqlCommand(queryString, connection);
+                        command.Parameters.AddWithValue("@id", Request.Form["AddId"]);
+                        command.Parameters.AddWithValue("@link", Request.Form["AddLink"]);
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                    }
+                }
+
                 ltrTable.Text = LoadHinhAnh();
             }
         }
         private string LoadHinhAnh()
         {
-            string connectionString =
-                "Data Source=KIT;database=NguyenHoangKha;Initial Catalog=NguyenHoangKha;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
             string queryString = "SELECT * FROM dbo.hinhanh;";
             using (SqlConnection connection =

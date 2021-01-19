@@ -21,7 +21,20 @@
       <a class="navbar-brand" href="#">NguyenHoangKha</a>
     </nav>
     <div class="container page-top">
-    <table id="example" class="table table-dark table-bordered" style="width:100%">
+        <form class="row g-3" method="post" action="#">
+            <div class="col-4">
+                <label for="AddId" class="visually-hidden">Id</label>
+                <input type="number" min="1" class="form-control" id="AddId" name="AddId" value="" placeholder="Nhập Id">
+            </div>
+            <div class="col-6">
+                <label for="AddLink" class="visually-hidden">Link</label>
+                <input type="url" class="form-control" id="AddLink" name="AddLink" value="" placeholder="Nhập link ảnh">
+            </div>
+            <div class="col-2">
+                <button type="submit" name="button_add" class="btn btn-primary mb-3">Thêm</button>
+            </div>
+        </form>
+        <table id="example" class="table table-dark table-bordered" style="width:100%">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -44,12 +57,12 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form method="post" action="" name="edit" id="edit">
+            <form method="post" action="#" name="edit" id="edit">
               <div class="form-group">
                 <label for="EditLink">Link</label>
-                <input type="url" class="form-control" id="EditLink" name="link" placeholder="Enter Link">
+                <input type="url" class="form-control" id="EditLink" name="EditLink" placeholder="Enter Link">
               </div>
-                <input type="hidden" class="form-control" id="EditId" name="id">
+                <input type="hidden" class="form-control" id="EditId" name="EditId">
             </form>
           </div>
           <div class="modal-footer">
@@ -69,10 +82,10 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-footer">
-            <form method="post" action="" name="Delete">
-                <input type="hidden" class="form-control" id="DeleteId" name="id">
+            <form method="post" action="#">
+                <input type="hidden" class="form-control" id="DeleteId" name="DeleteId">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-                <button type="submit" name="button_Delete" form="Delete" class="btn btn-danger">Xóa</button>
+                <button type="submit" name="button_Delete" class="btn btn-danger">Xóa</button>
             </form>
           </div>
         </div>
